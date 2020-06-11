@@ -1,0 +1,13 @@
+@import '../../styles/variables.scss';
+
+.job-listings {
+  padding: 2rem;
+  padding-top: 4rem;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media (max-width: $mobile) {
+    padding-top: 5rem;
+  }
+}
