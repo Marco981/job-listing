@@ -1,0 +1,9 @@
+@import '../../styles/variables.scss';
+
+.Header {
+  background: url('../../assets/images/bg-header-desktop.svg') $color-primary;
+  height: 150px;
+  svg {
+    max-width: 1440px;
+  }
+}
