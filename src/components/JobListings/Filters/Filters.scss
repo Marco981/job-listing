@@ -1,0 +1,52 @@
+@import '../../../styles/variables.scss';
+
+.filters-section {
+  position: absolute;
+  top: -30px;
+  width: calc(100% - 4rem);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background: white;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-shadow: -1px 7px 27px 0px $color-dark-gray;
+  border-radius: 5px;
+
+  &__clear-button {
+    border: none;
+    background: transparent;
+    color: $color-primary;
+    margin-left: auto;
+    cursor: pointer;
+  }
+
+}
+
+.filters-container {
+  display: flex;
+  flex-basis: 80%;
+  flex-wrap: wrap;
+}
+
+.filter {
+  display: flex;
+  margin-right: 1rem;
+  height: 35px;
+  &__name {
+    display: flex;
+    align-items: center;
+    padding: .5rem;
+    background: $color-light-gray;
+    color: $color-primary;
+  }
+
+  &__close-button {
+    background: no-repeat center url('../../../assets/images/icon-remove.svg') black;
+    padding: .8rem;
+    border: none;
+    width: 35px;
+    cursor: pointer;
+  }
+}
