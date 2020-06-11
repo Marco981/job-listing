@@ -12,6 +12,7 @@
 
   @media (max-width: $mobile) {
     flex-flow: column;
+    margin-bottom: 3rem;
   }
 
   &.featured {
