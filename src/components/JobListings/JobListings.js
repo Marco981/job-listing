@@ -7,9 +7,19 @@ import './JobListings.scss';
 
 class JobListings extends Component {
     state = {
-        jobs: jobs,
+        jobs: [],
         filters: []
     };
+
+    componentDidMount() {
+        const jobsWithFilters = jobs.map((job) => {
+            return { ...job, filters: [ job.role, job.level, ...job.languages, ...job.tools ] };
+        });
+
+        this.setState({
+            jobs: jobsWithFilters
+        });
+    }
 
     addFilter = (language) => {
         if (!this.state.filters.includes(language)) {
@@ -29,7 +39,9 @@ class JobListings extends Component {
 
     filterJobs = () => {
         const filteredJobs = this.state.jobs.filter((job) => {
-            return this.state.filters.every((lang) => job.languages.includes(lang));
+            return this.state.filters.every((filter) => {
+                return job.filters.includes(filter);
+            });
         });
 
         return filteredJobs;

@@ -27,7 +27,7 @@ export default function JobListing(props) {
                 </div>
             </div>
             <div className='joblisting__languages-container'>
-                {props.languages.map((language, i) => {
+                {props.filters.map((language, i) => {
                     return (
                         <div onClick={() => props.click(language)} key={i} className='language'>
                             {language}
