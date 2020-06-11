@@ -1,5 +1,8 @@
 @import './styles/variables.scss';
 
 .App {
-  
+  max-width: 1440px;
+  margin: 0 auto;
+  background: lighten($color-primary, 30%);
+
 }
