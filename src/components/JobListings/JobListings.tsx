@@ -5,9 +5,26 @@ import Filters from './Filters/Filters';
 
 import './JobListings.scss';
 
+export interface JobModel {
+    id: number;
+    company: string;
+    logo: string;
+    new: boolean;
+    featured: boolean;
+    position: string;
+    role: string;
+    level: string;
+    postedAt: string;
+    contract: string;
+    location: string;
+    languages: string[];
+    tools: string[];
+    filters: string[];
+}
+
 function JobListings() {
-    const [ jobs, setJobs ] = useState([]);
-    const [ filters, setFilters ] = useState([]);
+    const [ jobs, setJobs ] = useState<JobModel[]>([]);
+    const [ filters, setFilters ] = useState<string[]>([]);
 
     useEffect(() => {
         const jobsWithFilters = jobsData.map((job) => {
@@ -16,13 +33,13 @@ function JobListings() {
         setJobs(jobsWithFilters);
     }, []);
 
-    const addFilter = (language) => {
+    const addFilter = (language: string) => {
         if (!filters.includes(language)) {
             setFilters(filters.concat(language));
         }
     };
 
-    const removeFilter = (language) => {
+    const removeFilter = (language: string) => {
         setFilters(filters.filter((filter) => filter !== language));
     };
 
