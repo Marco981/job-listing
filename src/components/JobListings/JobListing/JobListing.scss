@@ -118,6 +118,10 @@
       cursor: pointer;
       transition: background .3s ease-in-out, color .3s ease-in-out;
 
+      @media (max-width: $mobile) {
+        margin-bottom: 1rem;
+      }
+
       &:hover {
         background: $color-primary;
         color: white;
