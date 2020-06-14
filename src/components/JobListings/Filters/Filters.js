@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './Filters.scss';
 
@@ -25,3 +26,9 @@ export default function Filters(props) {
         </div>
     );
 }
+
+Filters.propTypes = {
+    filters: PropTypes.arrayOf(PropTypes.string),
+    remove: PropTypes.func,
+    clearFilters: PropTypes.func
+};

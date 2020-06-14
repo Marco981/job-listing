@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './JobListing.scss';
 
@@ -38,3 +39,21 @@ export default function JobListing(props) {
         </div>
     );
 }
+
+JobListing.propTypes = {
+    id: PropTypes.number,
+    company: PropTypes.string,
+    logo: PropTypes.string,
+    new: PropTypes.bool,
+    featured: PropTypes.bool,
+    position: PropTypes.string,
+    role: PropTypes.string,
+    level: PropTypes.string,
+    postedAt: PropTypes.string,
+    contract: PropTypes.string,
+    location: PropTypes.string,
+    languages: PropTypes.arrayOf(PropTypes.string),
+    tools: PropTypes.arrayOf(PropTypes.string),
+    filters: PropTypes.arrayOf(PropTypes.string),
+    click: PropTypes.func
+};
